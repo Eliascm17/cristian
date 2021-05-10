@@ -126,7 +126,7 @@ const Container = ({ children }) => {
         )}
       </nav>
 
-      <main className="flex flex-col justify-start px-4">
+      <main className="flex flex-col justify-center px-4">
         {children}
         <Footer />
       </main>
