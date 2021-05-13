@@ -1,8 +1,22 @@
 import Container from "@/components/Container";
-import React from "react";
+import { getAllPhotos } from "lib/dataFetcher";
 
-const photos = () => {
-  return <Container></Container>;
+const photos = (props) => {
+  console.log(props);
+  return <Container>/photos/index.js</Container>;
 };
+
+export async function getStaticProps() {
+  const photos = await getAllPhotos();
+
+  return {
+    props: {
+      fashion: photos.fashion,
+      personal: photos.personal,
+      promos: photos.promos,
+      wedding: photos.wedding,
+    },
+  };
+}
 
 export default photos;
