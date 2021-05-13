@@ -5,7 +5,7 @@ module.exports = {
     extend: {},
   },
   variants: {
-    extend: {},
+    extend: { grayscale: ["hover"] },
   },
   plugins: [require("@tailwindcss/aspect-ratio")],
 };
