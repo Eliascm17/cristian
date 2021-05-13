@@ -8,9 +8,11 @@ const Container = ({ children }) => {
 
   return (
     <div className="">
-      <nav className="flex flex-col sm:flex-row transition items-center justify-between px-4 pt-4 md:px-8 md:pt-8 max-w-7xl w-full mx-auto">
-        <div className="flex relative justify-between w-full">
-          <h1 className="text-2xl md:text-4xl font-bold">CRISV.CO</h1>
+      <nav className="flex flex-col sm:flex-row transition items-center justify-between px-6 pt-6 md:px-8 md:pt-8 max-w-7xl w-full mx-auto">
+        <div className="flex relative justify-between w-full items-center">
+          <a href="/">
+            <h1 className="text-3xl md:text-4xl font-bold">CRISV.CO</h1>
+          </a>
           <div className="flex flex-col sm:hidden pt-2">
             {!menuOpen && (
               <button
@@ -18,16 +20,16 @@ const Container = ({ children }) => {
                 onClick={() => setMenuOpen(true)}
               >
                 <svg
-                  class="w-6 h-6"
+                  className="w-10 h-10 pb-2"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M4 6h16M4 12h16M4 18h16"
                   ></path>
                 </svg>
@@ -39,11 +41,11 @@ const Container = ({ children }) => {
                 className="focus:outline-none stroke-current hover:text-gray-500 transition ease-in-out duration-200"
                 onClick={() => setMenuOpen(false)}
               >
-                <svg className="w-6 h-6" viewBox="0 0 24 24">
+                <svg className="w-10 h-10 pb-2" viewBox="0 0 24 24">
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M6 18L18 6M6 6l12 12"
                   ></path>
                 </svg>
@@ -126,7 +128,7 @@ const Container = ({ children }) => {
         )}
       </nav>
 
-      <main className="flex flex-col justify-center px-4">
+      <main className="flex flex-col justify-center max-w-7xl mx-auto w-full px-6 md:px-8 mt-8">
         {children}
         <Footer />
       </main>
