@@ -6,4 +6,8 @@
   .featured-hover {
     @apply filter grayscale hover:grayscale-0 transition ease-in-out duration-300;
   }
+
+  .photo-cards-hover {
+    @apply backdrop-filter backdrop-sepia-0 hover:backdrop-sepia transition ease-in-out duration-300;
+  }
 }
