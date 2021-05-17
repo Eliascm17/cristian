@@ -34,7 +34,7 @@ export default function Home() {
                 </h1>
                 <img
                   className="object-cover z-10"
-                  src="/collections/photos/promos/gelato-1.jpg"
+                  src="/collections/photos/promos/honey-and-fig/gelato-1.jpg"
                 />
               </div>
             </a>
@@ -45,7 +45,7 @@ export default function Home() {
                 </h1>
                 <img
                   className="object-cover z-10"
-                  src="/collections/photos/wedding/wedding-12.jpg"
+                  src="/collections/photos/wedding/aliza-and-chris/wedding-12.jpg"
                 />
               </div>
             </a>
