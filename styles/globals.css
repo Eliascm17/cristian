@@ -3,11 +3,28 @@
 @tailwind utilities;
 
 @layer utilities {
-  .featured-hover {
-    @apply filter grayscale hover:grayscale-0 transition ease-in-out duration-300;
+  .hover-photo-card {
+    @apply filter hover:brightness-75 transition ease-in-out duration-300;
   }
-
-  .photo-cards-hover {
-    @apply backdrop-filter backdrop-sepia-0 hover:backdrop-sepia transition ease-in-out duration-300;
+  .card-zoom {
+    @apply relative overflow-hidden;
+  }
+  .card-zoom-image {
+    @apply object-fill transition-all duration-500 ease-in-out transform;
+  }
+  .card-zoom-text {
+    @apply hidden absolute top-28 text-3xl font-extralight text-center text-gray-50;
+  }
+  .card-zoom-text-video {
+    @apply hidden absolute top-10 md:top-20 text-2xl md:text-3xl lg:text-5xl font-extralight text-center text-gray-50;
+  }
+  .card-zoom:hover .card-zoom-image {
+    @apply scale-125 filter brightness-75 transition ease-in-out duration-300;
+  }
+  .card-zoom:hover .card-zoom-text {
+    @apply scale-125 block animate-fade-in-down;
+  }
+  .card-zoom:hover .card-zoom-text-video {
+    @apply scale-125 block animate-fade-in-down;
   }
 }

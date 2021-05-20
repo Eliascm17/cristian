@@ -1,60 +1,60 @@
 import Container from "@/components/Container";
-import { getPhotos } from "lib/dataFetcher";
-import Image from "next/image";
 
 const photoCards = [
   {
-    path: "/collections/photos/fashion/shoot-1/Promos-02.jpg",
-    name: "Fashion",
-  },
-  {
-    path: "/collections/photos/personal/Misc/sideline-45.jpg",
-    name: "Personal",
-  },
-  {
-    path: "/collections/photos/wedding/Aliza & Chris/wedding-18.jpg",
+    imgPath: "/collections/photos/wedding/Aliza & Chris/wedding-18.jpg",
     name: "Wedding",
+    path: "/photos/weddings",
   },
   {
-    path: "/collections/photos/portraits/Julianna and Kaitlyn/julesAndPalPics-02.jpg",
+    imgPath:
+      "/collections/photos/portraits/Julianna & Kaitlin/julesAndPalPics-02.jpg",
     name: "Portraits",
+    path: "/photos/portraits",
   },
   {
-    path: "/collections/photos/promos/Honey & Fig/DSC03671.jpg",
+    imgPath: "/collections/photos/promos/Honey & Fig/DSC03671.jpg",
     name: "Promos",
+    path: "/photos/promos",
+  },
+  {
+    imgPath: "/collections/photos/fashion/shoot-1/Promos-02.jpg",
+    name: "Fashion",
+    path: "/photos/fashion",
+  },
+  {
+    imgPath: "/collections/photos/personal/Misc/sideline-45.jpg",
+    name: "Personal",
+    path: "/photos/personal",
   },
 ];
 
-const index = ({}) => {
+const index = () => {
   return (
     <Container>
-      <h1 className="text-3xl md:text-4xl text-gray-900 font-bold mb-6 md:mb-10">
-        Photo Shoots
-      </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {photoCards.map((pic, i) => {
-          return (
-            <div className="aspect-h-8 aspect-w-5 photo-cards-hover" key={i}>
-              <h1 className="z-30 text-white text-4xl font-semibold self-center">
-                {pic.name}
-              </h1>
-              <Image src={pic.path} layout="fill" objectFit="cover" />
-            </div>
-          );
-        })}
+      <div className="flex flex-col justify-center max-w-7xl mx-auto w-full space-y-8 mt-10 px-6 md:px-8 mb-8">
+        <h1 className="text-4xl font-extralight sm:text-5xl lg:text-5xl">
+          Photo Shoots
+        </h1>
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {photoCards.map((pic, i) => {
+            return (
+              <a href={pic.path}>
+                <div className="card-zoom aspect-w-2 aspect-h-3" key={i}>
+                  <img
+                    src={pic.imgPath}
+                    loading="lazy"
+                    className="card-zoom-image"
+                  />
+                  <h1 className="card-zoom-text">{pic.name}</h1>
+                </div>
+              </a>
+            );
+          })}
+        </div>
       </div>
     </Container>
   );
 };
-
-export async function getStaticProps() {
-  const photos = await getPhotos("public/collections/photos");
-
-  return {
-    props: {
-      photos,
-    },
-  };
-}
 
 export default index;

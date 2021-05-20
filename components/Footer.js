@@ -12,7 +12,7 @@ const ExternalLink = ({ children, href, alt, newTab = true }) => {
 };
 
 const Footer = () => (
-  <footer className="flex flex-col w-full items-start justify-center max-w-7xl mx-auto space-y-4 mb-12 mt-8">
+  <footer className="flex flex-col w-full items-start justify-center max-w-7xl mx-auto space-y-4 mb-12 px-6 md:px-8">
     <hr className="w-full border-1 border-gray-400 dark:border-gray-500 mb-6" />
     <div className="w-full max-w-2xl grid grid-cols-1 sm:grid-cols-2 gap-4">
       <ExternalLink

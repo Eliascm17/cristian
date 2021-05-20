@@ -1,96 +1,112 @@
 import Container from "@/components/Container";
-import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter();
   return (
     <Container>
-      <div className="flex flex-col justify-center max-w-7xl mx-auto w-full">
-        {/* <div className="flex items-center justify-center h-screen mb-12 overflow-hidden max-w-7xl">
-        <div className="relative z-30 p-5 text-3xl text-white">
-          Hey, I'm Cristian and I make your memories last forever
-        </div>
-        <video
-          autoPlay
-          loop
-          muted
-          className="absolute z-10 w-full min-w-full min-h-full max-w-none"
-        >
-          <source
-            src="/collections/film/jack-and-mackenzie.mp4"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
-      </div> */}
-        <div className="flex flex-col space-y-4">
-          <h1 className="text-4xl font-extralight sm:text-5xl lg:text-5xl">
-            Featured
-          </h1>
-          <div className="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-6">
-            <a href="/photos/promos">
-              <div className="flex w-full mx-auto justify-start items-center aspect-w-2 aspect-h-3 sm:aspect-w-3 sm:aspect-h-4 lg:aspect-w-4 lg:aspect-h-5 featured-hover">
-                <h1 className="z-30 text-white text-4xl font-semibold">
-                  Honey & Fig Promo
-                </h1>
-                <img
-                  className="object-cover z-10"
-                  src="/collections/photos/promos/honey-and-fig/gelato-1.jpg"
-                />
-              </div>
-            </a>
-            <a href="/photos/weddings">
-              <div className="aspect-w-2 aspect-h-3 sm:aspect-w-3 sm:aspect-h-4 lg:aspect-w-4 lg:aspect-h-5 featured-hover">
-                <h1 className="z-30 text-white text-4xl font-semibold">
-                  Chris and Aliza's Wedding
-                </h1>
-                <img
-                  className="object-cover z-10"
-                  src="/collections/photos/wedding/aliza-and-chris/wedding-12.jpg"
-                />
-              </div>
-            </a>
+      <div className="flex flex-col justify-center items-center w-screen space-y-8">
+        <div className="relative mt-4 aspect-w-16 aspect-h-9 w-screen">
+          <video autoPlay loop muted>
+            <source
+              src="https://player.vimeo.com/external/492976744.hd.mp4?s=46a67250bc052a00a4a52ac5891f4a2303b630b1&profile_id=174"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+          <div className="hidden md:flex md:flex-col w-3/4 mt-20 ml-12 lg:mt-36 lg:ml-20 xl:mt-72">
+            <div className="filter drop-shadow-xl ml-2 font-semibold z-30 px-4 text-5xl lg:text-7xl text-white">
+              Hey, I'm Cristian and I make your memories last forever
+            </div>
+            <button
+              onClick={() => {
+                router.push("/contact");
+              }}
+              className="ml-6 mt-6 w-40 bg-transparent text-2xl font-light z-30 shadow focus:shadow-outline focus:outline-none text-white border border-white py-2 px-4 hover:bg-white hover:text-black transition ease-in-out duration-300"
+              type="button"
+            >
+              Book Now
+            </button>
           </div>
         </div>
+        <div className="md:hidden">
+          <div className="filter drop-shadow-xl ml-2 font-semibold z-30 px-4 text-4xl sm:text-5xl md:text-7xl text-gray-900">
+            Hey, I'm Cristian and I make your memories last forever
+          </div>
+          <button
+            onClick={() => {
+              router.push("/contact");
+            }}
+            className="ml-6 mt-6 bg-gray-900 text-md font-light z-30 shadow focus:shadow-outline focus:outline-none text-white border border-white py-2 px-4 hover:bg-white hover:text-black transition ease-in-out duration-300"
+            type="button"
+          >
+            Book Now
+          </button>
+        </div>
+      </div>
+      <div className="flex flex-col justify-center max-w-7xl mx-auto w-full space-y-8 mt-10 px-6 md:px-8">
+        <h1 className="text-4xl font-extralight sm:text-5xl lg:text-5xl">
+          Featured
+        </h1>
+        <div className="grid grid-cols-1 gap-y-4 sm:grid-cols-3 sm:gap-6">
+          <Link
+            href={{
+              pathname: "/photos/promos/[slug]",
+              query: { slug: "Honey & Fig" },
+            }}
+          >
+            <div className="card-zoom aspect-w-2 aspect-h-3">
+              <img
+                src="/collections/photos/promos/Honey & Fig/DSC03680.jpg"
+                className="card-zoom-image"
+              />
+              <h1 className="card-zoom-text">Honey & Fig</h1>
+            </div>
+          </Link>
+          <Link
+            href={{
+              pathname: "/photos/weddings/[slug]",
+              query: { slug: "Aliza & Chris" },
+            }}
+          >
+            <div className="card-zoom aspect-w-2 aspect-h-3">
+              <img
+                src="/collections/photos/wedding/Aliza & Chris/wedding-12.jpg"
+                className="card-zoom-image"
+              />
+              <h1 className="card-zoom-text">Chris & Aliza's Wedding</h1>
+            </div>
+          </Link>
+          <Link
+            href={{
+              pathname: "/photos/portraits/[slug]",
+              query: { slug: "Julianna & Kaitlin" },
+            }}
+          >
+            <div className="card-zoom aspect-w-2 aspect-h-3">
+              <img
+                src="/collections/photos/portraits/Julianna & Kaitlin/julesAndPalPics-02.jpg"
+                className="card-zoom-image"
+              />
+              <h1 className="card-zoom-text">Julianna & Kaitlin</h1>
+            </div>
+          </Link>
+        </div>
+
+        <a href="/photos/promos">
+          <div className="card-zoom aspect-w-16 aspect-h-9 mb-8">
+            <video autoPlay loop muted className="card-zoom-image">
+              <source
+                src="https://player.vimeo.com/external/502843576.hd.mp4?s=a130de06300a01e7a4522f4a3cd1501bb796a3fa&profile_id=174"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+            <h1 className="card-zoom-text-video">Sockdolager Brewery</h1>
+          </div>
+        </a>
       </div>
     </Container>
   );
-}
-{
-  /* <iframe src="https://player.vimeo.com/video/472060445?color=ffffff&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe> */
-}
-{
-  /* <p><a href="https://vimeo.com/472060445">Jack &amp; Mackenzie</a> from <a href="https://vimeo.com/user125819980">Cristian Villanueva</a> on <a href="https://vimeo.com">Vimeo</a>.</p> */
-}
-{
-  /* <div className="flex flex-col justify-start w-full mx-auto max-w-6xl">
-  <section className="aspect-w-16 aspect-h-9 mt-4">
-    <p className="z-10 absolute text-black font-bold md:text-2xl mt-10 ml-4">
-      Hey, I'm Cristian and I make your memories last forever
-    </p>
-    <div className="relative z-30 p-5 text-2xl text-white bg-purple-300 bg-opacity-50 rounded-xl">
-      Hey, I'm Cristian and I make your memories last forever
-    </div>
-    <div className="w-full bg-blue-500 absolute h-10"></div>
-    <iframe
-      src="/collections/film/jack-and-mackenzie.mp4"
-      loading="lazy"
-      width="900"
-      height="500"
-      frameborder="0"
-      allow="autoplay"
-    ></iframe>
-    <iframe
-      src="https://player.vimeo.com/video/472060445?autoplay=1&loop=1&autopause=0&controls=0&loop=1&autopause=0&muted=1"
-      loading="lazy"
-      width="900"
-      height="500"
-      frameborder="0"
-      allow="autoplay"
-    ></iframe>
-    <div className="flex flex-col-reverse justify-around">
-      <div className="w-full bg-blue-400 absolute h-7"></div>
-      <div className="w-full bg-blue-500 absolute h-7"></div>
-    </div>
-  </section>
-</div>; */
 }
