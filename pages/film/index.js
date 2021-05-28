@@ -35,7 +35,7 @@ const index = () => {
                       <source src={video.videoPath} type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
-                    <h1 className="hidden md:block md:card-zoom-text">
+                    <h1 className="hidden md:block md:card-zoom-text md:text-3xl lg:text-6xl">
                       {video.name}
                     </h1>
                   </div>

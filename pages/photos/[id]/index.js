@@ -28,7 +28,7 @@ const Shoots = () => {
                       loading="lazy"
                       className="card-zoom-image"
                     />
-                    <h1 className="card-zoom-text">{pic.slug}</h1>
+                    <h1 className="card-zoom-text">{pic.name}</h1>
                   </div>
                 </Link>
               );
