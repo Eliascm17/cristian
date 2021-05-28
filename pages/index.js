@@ -53,7 +53,7 @@ export default function Home() {
           <Link
             href={{
               pathname: "/photos/[id]/[slug]",
-              query: { slug: "Honey & Fig", id: "promos" },
+              query: { slug: "honey & fig", id: "promos" },
             }}
           >
             <div className="card-zoom aspect-w-2 aspect-h-3">
@@ -67,7 +67,7 @@ export default function Home() {
           <Link
             href={{
               pathname: "/photos/[id]/[slug]",
-              query: { slug: "Aliza & Chris", id: "wedding" },
+              query: { slug: "aliza & chris", id: "wedding" },
             }}
           >
             <div className="card-zoom aspect-w-2 aspect-h-3">
@@ -81,7 +81,7 @@ export default function Home() {
           <Link
             href={{
               pathname: "/photos/[id]/[slug]",
-              query: { slug: "Julianna & Kaitlin", id: "portraits" },
+              query: { slug: "julianna & kaitlin", id: "portraits" },
             }}
           >
             <div className="card-zoom aspect-w-2 aspect-h-3">
@@ -94,7 +94,7 @@ export default function Home() {
           </Link>
         </div>
 
-        <a href="/photos/promos">
+        <a href="/film/promos">
           <div className="card-zoom aspect-w-16 aspect-h-9 mb-8">
             <video autoPlay loop muted className="card-zoom-image">
               <source

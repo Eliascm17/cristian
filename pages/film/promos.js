@@ -18,17 +18,17 @@ const Weddings = () => {
         <div className="grid grid-cols-1 gap-4">
           {videoCards.map((video, i) => {
             return (
-              <>
+              <div key={i}>
                 <h2 className="text-3xl lg:text-4xl font-extralight">
                   {video.name}
                 </h2>
-                <div className="card-zoom aspect-w-16 aspect-h-9" key={i}>
+                <div className="card-zoom aspect-w-16 aspect-h-9">
                   <video controls>
                     <source src={video.videoPath} type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                 </div>
-              </>
+              </div>
             );
           })}
         </div>
