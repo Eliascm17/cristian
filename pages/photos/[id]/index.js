@@ -13,7 +13,7 @@ const Shoots = () => {
         <h1 className="text-4xl font-extralight sm:text-5xl lg:text-5xl">
           {header[id]} Shoots
         </h1>
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {photoCards[id] &&
             photoCards[id].map((pic, i) => {
               return (

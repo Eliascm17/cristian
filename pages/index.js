@@ -75,7 +75,7 @@ export default function Home() {
                 src="/collections/photos/wedding/Aliza & Chris/wedding-12.jpg"
                 className="card-zoom-image"
               />
-              <h1 className="card-zoom-text">Chris & Aliza's Wedding</h1>
+              <h1 className="card-zoom-text">Chris & Aliza</h1>
             </div>
           </Link>
           <Link
