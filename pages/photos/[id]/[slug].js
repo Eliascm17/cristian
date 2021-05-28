@@ -46,12 +46,12 @@ export async function getStaticProps(context) {
   const slug = context.params.slug;
   const id = context.params.id;
 
-  console.log(context);
+  // console.log(context);
   const { filePaths } = await getPhotos(
     `public/collections/photos/${id}/${slug}`
   );
 
-  console.log(filePaths);
+  // console.log(filePaths);
 
   return { props: { photos: filePaths, client: slug } };
 }

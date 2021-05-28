@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Container from "@/components/Container";
-// import nodemailer from "nodemailer";
 
 const initialState = {
   name: "",
@@ -16,38 +15,25 @@ const initialState = {
 const contact = () => {
   const [form, setForm] = useState(initialState);
 
-  // const submitForm = async () => {
-  //   // Generate test SMTP service account from ethereal.email
-  //   // Only needed if you don't have a real mail account for testing
-  //   let testAccount = await nodemailer.createTestAccount();
+  const submitForm = (e) => {
+    e.preventDefault();
+    // console.log("Sending");
 
-  //   // create reusable transporter object using the default SMTP transport
-  //   let transporter = nodemailer.createTransport({
-  //     host: "smtp.ethereal.email",
-  //     port: 587,
-  //     secure: false, // true for 465, false for other ports
-  //     auth: {
-  //       user: testAccount.user, // generated ethereal user
-  //       pass: testAccount.pass, // generated ethereal password
-  //     },
-  //   });
-
-  //   // send mail with defined transport object
-  //   let info = await transporter.sendMail({
-  //     from: '"Fred Foo 👻" <foo@example.com>', // sender address
-  //     to: "Elias.cmoreno17@gmail.com", // list of receivers
-  //     subject: `New Client: ${form.name}`, // Subject line
-  //     text: form.description, // plain text body
-  //   });
-
-  //   console.log("Message sent: %s", info.messageId);
-  //   // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-
-  //   // Preview only available when sending through an Ethereal account
-  //   console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-  //   // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
-  //   setForm(initialState);
-  // };
+    fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
+    }).then((res) => {
+      // console.log("Response received");
+      if (res.status === 200) {
+        // console.log("Response succeeded!");
+        setForm(initialState);
+      }
+    });
+  };
 
   return (
     <Container>
@@ -142,7 +128,7 @@ const contact = () => {
           </div>
           <div className="flex flex-col items-start">
             <button
-              onClick={() => submitForm()}
+              onClick={submitForm}
               className="shadow bg-black hover:bg-gray-800 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4"
               type="button"
             >
