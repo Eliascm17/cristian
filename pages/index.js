@@ -58,7 +58,7 @@ export default function Home() {
           >
             <div className="card-zoom aspect-w-2 aspect-h-3">
               <img
-                src="/collections/photos/promos/Honey & Fig/DSC03680.jpg"
+                src="/collections/photos/promos/honey & fig/DSC03680.jpg"
                 className="card-zoom-image"
               />
               <h1 className="card-zoom-text">Honey & Fig</h1>
@@ -72,7 +72,7 @@ export default function Home() {
           >
             <div className="card-zoom aspect-w-2 aspect-h-3">
               <img
-                src="/collections/photos/wedding/Aliza & Chris/wedding-12.jpg"
+                src="/collections/photos/wedding/aliza & chris/wedding-12.jpg"
                 className="card-zoom-image"
               />
               <h1 className="card-zoom-text">Chris & Aliza</h1>
@@ -86,7 +86,7 @@ export default function Home() {
           >
             <div className="card-zoom aspect-w-2 aspect-h-3">
               <img
-                src="/collections/photos/portraits/Julianna & Kaitlin/julesAndPalPics-02.jpg"
+                src="/collections/photos/portraits/julianna & kaitlin/julesAndPalPics-02.jpg"
                 className="card-zoom-image"
               />
               <h1 className="card-zoom-text">Julianna & Kaitlin</h1>
