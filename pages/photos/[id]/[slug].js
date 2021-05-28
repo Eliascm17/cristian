@@ -1,21 +1,17 @@
 import Container from "@/components/Container";
 import { getFolderPaths, getPhotos } from "lib/dataFetcher";
 
-import React from "react";
-
-const slug = ({ photos, client }) => {
-  const { filePaths } = photos;
-
+const Shoot = ({ photos, client }) => {
   return (
     <Container>
       <div className="flex flex-col justify-center max-w-7xl mx-auto w-full space-y-8 mt-10 px-6 md:px-8 mb-8">
         <h1 className="text-4xl font-extralight sm:text-5xl lg:text-5xl">
           {client}
         </h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 ">
-          {filePaths.map((pic, i) => {
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
+          {photos.map((pic, i) => {
             return (
-              <div className="" key={i}>
+              <div key={i}>
                 <img
                   src={pic.substring(6)}
                   loading="lazy"
@@ -31,25 +27,28 @@ const slug = ({ photos, client }) => {
 };
 
 export async function getStaticPaths() {
-  const { folderPaths } = await getFolderPaths(
-    "public/collections/photos/fashion"
-  );
+  const { folderPaths } = await getFolderPaths(`public/collections/photos/`);
 
   return {
     paths: folderPaths.map((p) => ({
-      params: {
-        slug: p,
-      },
+      params: { id: p[0], slug: p[1] },
     })),
-    fallback: true,
+    fallback: false,
   };
 }
 
 export async function getStaticProps(context) {
   const slug = context.params.slug;
-  const photos = await getPhotos(`public/collections/photos/fashion/${slug}`);
+  const id = context.params.id;
 
-  return { props: { photos, client: slug } };
+  console.log(context);
+  const { filePaths } = await getPhotos(
+    `public/collections/photos/${id}/${slug}`
+  );
+
+  console.log(filePaths);
+
+  return { props: { photos: filePaths, client: slug } };
 }
 
-export default slug;
+export default Shoot;

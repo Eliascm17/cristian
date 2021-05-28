@@ -52,8 +52,8 @@ export default function Home() {
         <div className="grid grid-cols-1 gap-y-4 sm:grid-cols-3 sm:gap-6">
           <Link
             href={{
-              pathname: "/photos/promos/[slug]",
-              query: { slug: "Honey & Fig" },
+              pathname: "/photos/[id]/[slug]",
+              query: { slug: "Honey & Fig", id: "promos" },
             }}
           >
             <div className="card-zoom aspect-w-2 aspect-h-3">
@@ -66,8 +66,8 @@ export default function Home() {
           </Link>
           <Link
             href={{
-              pathname: "/photos/weddings/[slug]",
-              query: { slug: "Aliza & Chris" },
+              pathname: "/photos/[id]/[slug]",
+              query: { slug: "Aliza & Chris", id: "wedding" },
             }}
           >
             <div className="card-zoom aspect-w-2 aspect-h-3">
@@ -80,8 +80,8 @@ export default function Home() {
           </Link>
           <Link
             href={{
-              pathname: "/photos/portraits/[slug]",
-              query: { slug: "Julianna & Kaitlin" },
+              pathname: "/photos/[id]/[slug]",
+              query: { slug: "Julianna & Kaitlin", id: "portraits" },
             }}
           >
             <div className="card-zoom aspect-w-2 aspect-h-3">

@@ -7,7 +7,7 @@ const Container = ({ children }) => {
   const router = useRouter();
 
   return (
-    <div className="">
+    <div>
       <nav className="flex flex-col sm:flex-row transition items-center justify-between px-6 pt-6 md:px-8 md:pt-8 max-w-7xl w-full mx-auto">
         <div className="flex relative justify-between w-full items-center">
           <a href="/">
@@ -66,7 +66,8 @@ const Container = ({ children }) => {
           <a href="/photos">
             <div
               className={`text-xl ${
-                router.route === "/photos" && "border-b border-black"
+                router.route.substring(0, 7) === "/photos" &&
+                "border-b border-black"
               }`}
             >
               Photos
@@ -75,7 +76,8 @@ const Container = ({ children }) => {
           <a href="/film">
             <div
               className={`text-xl ${
-                router.route === "/film" && "border-b border-black"
+                router.route.substring(0, 5) === "/film" &&
+                "border-b border-black"
               }`}
             >
               Film
@@ -127,7 +129,6 @@ const Container = ({ children }) => {
           </div>
         )}
       </nav>
-      {/* max-w-7xl mx-auto w-full px-6 md:px-8 */}
       <main className="flex flex-col justify-center">
         {children}
         <Footer />

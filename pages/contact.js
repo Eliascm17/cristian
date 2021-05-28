@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Container from "@/components/Container";
+// import nodemailer from "nodemailer";
 
 const initialState = {
   name: "",
@@ -15,16 +16,42 @@ const initialState = {
 const contact = () => {
   const [form, setForm] = useState(initialState);
 
-  const submitForm = () => {
-    console.log(form);
-    // handle submitting and sending of email
-    // add loader/spinner
-    // resetting state
-  };
+  // const submitForm = async () => {
+  //   // Generate test SMTP service account from ethereal.email
+  //   // Only needed if you don't have a real mail account for testing
+  //   let testAccount = await nodemailer.createTestAccount();
+
+  //   // create reusable transporter object using the default SMTP transport
+  //   let transporter = nodemailer.createTransport({
+  //     host: "smtp.ethereal.email",
+  //     port: 587,
+  //     secure: false, // true for 465, false for other ports
+  //     auth: {
+  //       user: testAccount.user, // generated ethereal user
+  //       pass: testAccount.pass, // generated ethereal password
+  //     },
+  //   });
+
+  //   // send mail with defined transport object
+  //   let info = await transporter.sendMail({
+  //     from: '"Fred Foo 👻" <foo@example.com>', // sender address
+  //     to: "Elias.cmoreno17@gmail.com", // list of receivers
+  //     subject: `New Client: ${form.name}`, // Subject line
+  //     text: form.description, // plain text body
+  //   });
+
+  //   console.log("Message sent: %s", info.messageId);
+  //   // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+
+  //   // Preview only available when sending through an Ethereal account
+  //   console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+  //   // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+  //   setForm(initialState);
+  // };
 
   return (
     <Container>
-      <div className="flex flex-col justify-center max-w-7xl mx-auto w-full space-y-8 mt-10 px-6 md:px-8">
+      <div className="flex flex-col justify-center max-w-7xl mx-auto w-full space-y-8 mt-10 mb-8 px-6 md:px-8">
         <div className="grid grid-cols-1 gap-6">
           <h1 className="text-2xl font-bold">Contact Me</h1>
           <div className="flex flex-col">
