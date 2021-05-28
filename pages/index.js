@@ -1,5 +1,6 @@
 import Container from "@/components/Container";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/router";
 
 export default function Home() {
@@ -57,9 +58,10 @@ export default function Home() {
             }}
           >
             <div className="card-zoom aspect-w-2 aspect-h-3">
-              <img
+              <Image
                 src="/collections/photos/promos/honey & fig/DSC03680.jpg"
                 className="card-zoom-image"
+                layout="fill"
               />
               <h1 className="card-zoom-text">Honey & Fig</h1>
             </div>
@@ -71,9 +73,10 @@ export default function Home() {
             }}
           >
             <div className="card-zoom aspect-w-2 aspect-h-3">
-              <img
+              <Image
                 src="/collections/photos/wedding/aliza & chris/wedding-12.jpg"
                 className="card-zoom-image"
+                layout="fill"
               />
               <h1 className="card-zoom-text">Chris & Aliza</h1>
             </div>
@@ -85,9 +88,10 @@ export default function Home() {
             }}
           >
             <div className="card-zoom aspect-w-2 aspect-h-3">
-              <img
+              <Image
                 src="/collections/photos/portraits/julianna & kaitlin/julesAndPalPics-02.jpg"
                 className="card-zoom-image"
+                layout="fill"
               />
               <h1 className="card-zoom-text">Julianna & Kaitlin</h1>
             </div>
