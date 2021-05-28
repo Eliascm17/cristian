@@ -12,7 +12,7 @@ const Weddings = () => {
           {promoVideoCards.map((video, i) => {
             return (
               <div key={i}>
-                <h2 className="text-3xl lg:text-4xl font-extralight">
+                <h2 className="text-3xl lg:text-4xl font-extralight mb-2">
                   {video.name}
                 </h2>
                 <div className="card-zoom aspect-w-16 aspect-h-9">

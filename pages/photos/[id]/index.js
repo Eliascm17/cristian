@@ -17,20 +17,27 @@ const Shoots = () => {
           {photoCards[id] &&
             photoCards[id].map((pic, i) => {
               return (
-                <Link
-                  href={`/photos/[id]/[slug]`}
-                  as={`/photos/${pic.id}/${pic.slug}`}
-                  key={i}
-                >
-                  <div className="card-zoom aspect-w-2 aspect-h-3">
-                    <img
-                      src={pic.imgPath}
-                      loading="lazy"
-                      className="card-zoom-image"
-                    />
-                    <h1 className="card-zoom-text">{pic.name}</h1>
-                  </div>
-                </Link>
+                <div key={i}>
+                  <h2 className="text-3xl font-extralight md:hidden mb-2">
+                    {pic.name}
+                  </h2>
+                  <Link
+                    href={`/photos/[id]/[slug]`}
+                    as={`/photos/${pic.id}/${pic.slug}`}
+                    key={i}
+                  >
+                    <div className="card-zoom aspect-w-2 aspect-h-3">
+                      <img
+                        src={pic.imgPath}
+                        loading="lazy"
+                        className="card-zoom-image"
+                      />
+                      <h1 className="hidden md:block md:card-zoom-text">
+                        {pic.name}
+                      </h1>
+                    </div>
+                  </Link>
+                </div>
               );
             })}
         </div>
