@@ -1,19 +1,5 @@
 import Container from "@/components/Container";
-
-const videoCards = [
-  {
-    videoPath:
-      "https://player.vimeo.com/external/472060445.hd.mp4?s=efd46b42e7778c97d98d6a6b4a01841698c12ae6&profile_id=174",
-    name: "Wedding",
-    path: "/film/weddings",
-  },
-  {
-    videoPath:
-      "https://player.vimeo.com/external/502843576.hd.mp4?s=a130de06300a01e7a4522f4a3cd1501bb796a3fa&profile_id=174",
-    name: "Promos",
-    path: "/film/promos",
-  },
-];
+import { videoCards } from "@/lib/cardData";
 
 const index = () => {
   return (

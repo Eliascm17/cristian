@@ -1,12 +1,5 @@
 import Container from "@/components/Container";
-
-const videoCards = [
-  {
-    videoPath:
-      "https://player.vimeo.com/external/502843576.hd.mp4?s=a130de06300a01e7a4522f4a3cd1501bb796a3fa&profile_id=174",
-    name: "Sockdolager - Brewing day",
-  },
-];
+import { promoVideoCards } from "@/lib/cardData";
 
 const Weddings = () => {
   return (
@@ -16,7 +9,7 @@ const Weddings = () => {
           Promo Films
         </h1>
         <div className="grid grid-cols-1 gap-4">
-          {videoCards.map((video, i) => {
+          {promoVideoCards.map((video, i) => {
             return (
               <div key={i}>
                 <h2 className="text-3xl lg:text-4xl font-extralight">
