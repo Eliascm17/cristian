@@ -57,12 +57,13 @@ export default function Home() {
               query: { slug: "honey & fig", id: "promos" },
             }}
           >
-            <div className="card-zoom aspect-w-2 aspect-h-3">
+            <div className="card-zoom aspect-w-2 aspect-h-3 pb-0">
               <Image
                 src="/collections/photos/promos/honey & fig/DSC03680.jpg"
                 className="card-zoom-image"
-                layout="fill"
-                priority
+                layout="responsive"
+                width={600}
+                height={900}
               />
               <h1 className="card-zoom-text">Honey & Fig</h1>
             </div>
@@ -73,12 +74,13 @@ export default function Home() {
               query: { slug: "aliza & chris", id: "wedding" },
             }}
           >
-            <div className="card-zoom aspect-w-2 aspect-h-3">
+            <div className="card-zoom aspect-w-2 aspect-h-3 pb-0">
               <Image
                 src="/collections/photos/wedding/aliza & chris/wedding-12.jpg"
                 className="card-zoom-image"
-                layout="fill"
-                priority
+                layout="responsive"
+                width={600}
+                height={900}
               />
               <h1 className="card-zoom-text">Chris & Aliza</h1>
             </div>
@@ -89,30 +91,37 @@ export default function Home() {
               query: { slug: "julianna & kaitlin", id: "portraits" },
             }}
           >
-            <div className="card-zoom aspect-w-2 aspect-h-3">
+            <div className="card-zoom aspect-w-2 aspect-h-3 pb-0">
               <Image
                 src="/collections/photos/portraits/julianna & kaitlin/julesAndPalPics-02.jpg"
                 className="card-zoom-image"
-                layout="fill"
-                priority
+                layout="responsive"
+                width={600}
+                height={900}
               />
               <h1 className="card-zoom-text">Julianna & Kaitlin</h1>
             </div>
           </Link>
         </div>
-
-        <a href="/film/promos">
-          <div className="card-zoom aspect-w-16 aspect-h-9 mb-8">
-            <video autoPlay loop muted className="card-zoom-image">
-              <source
-                src="https://player.vimeo.com/external/502843576.hd.mp4?s=a130de06300a01e7a4522f4a3cd1501bb796a3fa&profile_id=174"
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
-            <h1 className="card-zoom-text-video">Sockdolager Brewery</h1>
-          </div>
-        </a>
+        <>
+          <h2 className="text-3xl font-extralight md:hidden">
+            Sockdolager Brewery
+          </h2>
+          <a href="/film/promos">
+            <div className="md:card-zoom aspect-w-16 aspect-h-9 mb-8 -mt-6 md:-mt-0">
+              <video autoPlay loop muted className="card-zoom-image">
+                <source
+                  src="https://player.vimeo.com/external/502843576.hd.mp4?s=a130de06300a01e7a4522f4a3cd1501bb796a3fa&profile_id=174"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
+              <h1 className="hidden md:block md:card-zoom-text-video">
+                Sockdolager Brewery
+              </h1>
+            </div>
+          </a>
+        </>
       </div>
     </Container>
   );
