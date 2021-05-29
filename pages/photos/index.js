@@ -18,7 +18,7 @@ const index = () => {
                   {pic.name}
                 </h2>
                 <Link href="/photos/[id]" as={`/photos/${pic.id}`}>
-                  <div className="card-zoom aspect-w-2 aspect-h-3" key={i}>
+                  <div className="card-zoom aspect-w-2 aspect-h-3 pb-0" key={i}>
                     <Image
                       src={pic.imgPath}
                       layout="responsive"
