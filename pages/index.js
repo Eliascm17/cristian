@@ -62,6 +62,7 @@ export default function Home() {
                 src="/collections/photos/promos/honey & fig/DSC03680.jpg"
                 className="card-zoom-image"
                 layout="fill"
+                priority
               />
               <h1 className="card-zoom-text">Honey & Fig</h1>
             </div>
@@ -77,6 +78,7 @@ export default function Home() {
                 src="/collections/photos/wedding/aliza & chris/wedding-12.jpg"
                 className="card-zoom-image"
                 layout="fill"
+                priority
               />
               <h1 className="card-zoom-text">Chris & Aliza</h1>
             </div>
@@ -92,6 +94,7 @@ export default function Home() {
                 src="/collections/photos/portraits/julianna & kaitlin/julesAndPalPics-02.jpg"
                 className="card-zoom-image"
                 layout="fill"
+                priority
               />
               <h1 className="card-zoom-text">Julianna & Kaitlin</h1>
             </div>
