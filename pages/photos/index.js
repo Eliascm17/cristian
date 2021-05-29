@@ -1,5 +1,6 @@
 import Container from "@/components/Container";
 import Link from "next/link";
+import Image from "next/image";
 import { shootsCards } from "@/lib/cardData";
 
 const index = () => {
@@ -18,9 +19,11 @@ const index = () => {
                 </h2>
                 <Link href="/photos/[id]" as={`/photos/${pic.id}`}>
                   <div className="card-zoom aspect-w-2 aspect-h-3" key={i}>
-                    <img
+                    <Image
                       src={pic.imgPath}
-                      loading="lazy"
+                      layout="responsive"
+                      width={600}
+                      height={900}
                       className="card-zoom-image"
                     />
                     <h1 className="card-zoom-text">{pic.title}</h1>

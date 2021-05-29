@@ -1,5 +1,6 @@
 import Container from "@/components/Container";
 import { getFolderPaths, getPhotos } from "lib/dataFetcher";
+import Image from "next/image";
 
 const Shoot = ({ photos, client }) => {
   //uppercase the client's name
@@ -16,11 +17,10 @@ const Shoot = ({ photos, client }) => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {photos.map((pic, i) => {
             return (
-              <div key={i} className="">
-                <img
-                  src={pic.substring(6)}
-                  loading="lazy"
-                  className="object-fill"
+              <div key={i} className="aspect-w-2 aspect-h-3">
+                <Image
+                  src={`https://www.crisv.co${pic.substring(6)}`}
+                  layout="fill"
                 />
               </div>
             );
