@@ -3,7 +3,7 @@ module.exports = {
     webpack5: true,
   },
   images: {
-    domains: ["https://github.com"],
+    domains: ["www.crisv.co"],
   },
   webpack: (config, { isServer }) => {
     if (!isServer) {
